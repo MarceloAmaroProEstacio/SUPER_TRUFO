@@ -13,10 +13,20 @@ int main() {
     char nomeCidade1[50], nomeCidade2[50];
     unsigned long int populacao1, populacao2;
     float area1, area2, pib1, pib2;
+    float densidade1, densidade2, pibPerCapita1, pibPerCapita2;
     int pontosTuristicos1, pontosTuristicos2;
 
+    // Informações Gerais
+    printf("SUPER TRUNFO NIVEL MESTRE\n");
+    printf("Por favor, insira os dados conforme solicitado, um por vez.\n");
+    printf("---------------------------------------------------------\n");
+    printf("PROGRAMA: SUPER TRUNFO\n");
+    printf("ALUNO       : MARCELO AMARO RODRIGUES\n");
+    printf("PROFESSOR   : SERGIO CARDOSO\n");
+    printf("INSTITUIÇÃO : ESTACIO DE SÁ\n");
+
     // Entrada de dados da Carta 1
-    printf("Digite os dados da Carta 1:\n");
+    printf("\nDigite os dados da Carta 1:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &estado1);
     printf("Código da Carta (ex: A01): ");
@@ -33,6 +43,12 @@ int main() {
     limparBuffer();
     printf("PIB (bilhões de reais): ");
     scanf("%f", &pib1);
+    limparBuffer();
+    printf("Densidade Populacional (hab/km²): ");
+    scanf("%f", &densidade1);
+    limparBuffer();
+    printf("PIB per Capita (reais): ");
+    scanf("%f", &pibPerCapita1);
     limparBuffer();
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos1);
@@ -57,32 +73,33 @@ int main() {
     printf("PIB (bilhões de reais): ");
     scanf("%f", &pib2);
     limparBuffer();
+    printf("Densidade Populacional (hab/km²): ");
+    scanf("%f", &densidade2);
+    limparBuffer();
+    printf("PIB per Capita (reais): ");
+    scanf("%f", &pibPerCapita2);
+    limparBuffer();
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos2);
     limparBuffer();
 
-    // Cálculos para Carta 1
-    float densidade1 = populacao1 / area1;
-    float pibPerCapita1 = pib1 / populacao1;
+    // Cálculo de Super Poder para ambas as Cartas
     float superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1 / densidade1);
-
-    // Cálculos para Carta 2
-    float densidade2 = populacao2 / area2;
-    float pibPerCapita2 = pib2 / populacao2;
     float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1 / densidade2);
 
-    // Comparação de atributos
+    // Comparação e Exibição de Resultados
     printf("\nComparação de Cartas:\n");
-    printf("População: Carta %d venceu (%d)\n", (populacao1 > populacao2 ? 1 : 2), (populacao1 > populacao2 ? 1 : 0));
-    printf("Área: Carta %d venceu (%d)\n", (area1 > area2 ? 1 : 2), (area1 > area2 ? 1 : 0));
-    printf("PIB: Carta %d venceu (%d)\n", (pib1 > pib2 ? 1 : 2), (pib1 > pib2 ? 1 : 0));
-    printf("Pontos Turísticos: Carta %d venceu (%d)\n", (pontosTuristicos1 > pontosTuristicos2 ? 1 : 2), (pontosTuristicos1 > pontosTuristicos2 ? 1 : 0));
-    printf("Densidade Populacional: Carta %d venceu (%d)\n", (densidade1 < densidade2 ? 1 : 2), (densidade1 < densidade2 ? 1 : 0));
-    printf("PIB per Capita: Carta %d venceu (%d)\n", (pibPerCapita1 > pibPerCapita2 ? 1 : 2), (pibPerCapita1 > pibPerCapita2 ? 1 : 0));
-    printf("Super Poder: Carta %d venceu (%d)\n", (superPoder1 > superPoder2 ? 1 : 2), (superPoder1 > superPoder2 ? 1 : 0));
+    printf("População: Carta %d venceu\n", (populacao1 > populacao2 ? 1 : 2));
+    printf("Área: Carta %d venceu\n", (area1 > area2 ? 1 : 2));
+    printf("PIB: Carta %d venceu\n", (pib1 > pib2 ? 1 : 2));
+    printf("Pontos Turísticos: Carta %d venceu\n", (pontosTuristicos1 > pontosTuristicos2 ? 1 : 2));
+    printf("Densidade Populacional: Carta %d venceu\n", (densidade1 < densidade2 ? 1 : 2));
+    printf("PIB per Capita: Carta %d venceu\n", (pibPerCapita1 > pibPerCapita2 ? 1 : 2));
+    printf("Super Poder: Carta %d venceu\n", (superPoder1 > superPoder2 ? 1 : 2));
 
     return 0;
- /*
+
+    /*
  OBS: USEI ESSAS ESPECIFICAÇÕES E DEPOIS FIZ O COMPARATIVO COM O CÓDIGO DO SUPER TRUNFO
 
 Exemplo de Saída:
@@ -104,6 +121,8 @@ Nome da Cidade: Rio de Janeiro
 População: 6748000
 Área: 1200.25 km²
 PIB: 300.50 bilhões de reais
+Densidade Populacional: 5.174,6 hab/km²
+PIB per Capita: 71.849,66 reais
 Número de Pontos Turísticos: 30
 */
 
